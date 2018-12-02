@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
 
   def order_params
     # params whitelist
-    params.permit(
+    params.require(:order).permit(
       :last_name, :first_name, :status, :date_order_created,
       :date_approval_sent, :date_order_approved, :date_order_cut,
       :date_monument_ordered, :date_monument_set, :ordered_by,

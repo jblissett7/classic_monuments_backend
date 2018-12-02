@@ -36,9 +36,9 @@ class MonumentsController < ApplicationController
   private
 
   def monument_params
-    params.permit(
+    params.require(:monument).permit(
       :monument_type, :single_or_double, :length,
-      :width, :height, :color
+      :width, :height, :color, :price_cents
     )
   end
 
