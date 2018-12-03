@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Orders API', type: :request do
@@ -13,7 +14,7 @@ RSpec.describe 'Orders API', type: :request do
 
     it 'returns orders' do
       expect(json).not_to be_empty
-     expect(json.size).to eq(10)
+      expect(json.size).to eq(10)
     end
 
     it 'returns status code 200' do
@@ -43,9 +44,9 @@ RSpec.describe 'Orders API', type: :request do
         expect(response).to have_http_status(404)
       end
 
-      #it 'returns a not found message' do
+      # it 'returns a not found message' do
       #  expect(response.body).to match(/Couldn't find order/)
-      #end
+      # end
     end
   end
 
@@ -61,20 +62,20 @@ RSpec.describe 'Orders API', type: :request do
       #    expect(json['last_name'].to eq(valid_attributes[:last_name]))
       # end
 
-      #it 'returns status code 201' do
+      # it 'returns status code 201' do
       #  expect(response).to have_http_status(201)
-      #end
+      # end
     end
 
     context 'when the request is invalid' do
       before { post '/orders', params: { last_name: 'Foobar' } }
 
-      #it 'returns status code 422' do
+      # it 'returns status code 422' do
       #  expect(response).to have_http_status(422)
-      #end
+      # end
 
       # it 'returns a validation failure message' do
-      #    expect(response.body).to match(/Validation failed: First Name can't be blank/)
+      # expect(response.body).to match(/Validation failed: First Name can't be blank/)
       # end
     end
   end
@@ -84,15 +85,15 @@ RSpec.describe 'Orders API', type: :request do
     let(:valid_attributes) { { last_name: 'Jordan' } }
 
     context 'when record exists' do
-      before {put "/orders/#{order_id}", params: valid_attributes}
+      before { put "/orders/#{ order_id }", params: valid_attributes }
 
-      #it 'updates the record' do
+      # it 'updates the record' do
       #  expect(response.body).to be_empty
-      #end
+      # end
 
-      #it 'returns status code 204' do
+      # it 'returns status code 204' do
       #  expect(response).to have_http_status(204)
-      #end
+      # end
     end
   end
 
@@ -100,8 +101,8 @@ RSpec.describe 'Orders API', type: :request do
   describe 'DELETE /orders/:id' do
     before { delete "/orders/#{order_id}" }
 
-    #it 'returns status code 204' do
+    # it 'returns status code 204' do
     #  expect(response).to have_http_status(204)
-    #end
+    # end
   end
 end
