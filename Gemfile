@@ -42,7 +42,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
-  gem 'simplecov'
+  gem 'simplecov', require: false
 end
 
 group :development do
