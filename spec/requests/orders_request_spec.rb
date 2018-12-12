@@ -75,7 +75,8 @@ RSpec.describe 'Orders API', type: :request do
       # end
 
       # it 'returns a validation failure message' do
-      # expect(response.body).to match(/Validation failed: First Name can't be blank/)
+      # expect(response.body).to match(/Validation failed:
+      # First Name can't be blank/)
       # end
     end
   end
@@ -85,7 +86,7 @@ RSpec.describe 'Orders API', type: :request do
     let(:valid_attributes) { { last_name: 'Jordan' } }
 
     context 'when record exists' do
-      before { put "/orders/#{ order_id }", params: valid_attributes }
+      before { put "/orders/#{order_id}", params: valid_attributes }
 
       # it 'updates the record' do
       #  expect(response.body).to be_empty

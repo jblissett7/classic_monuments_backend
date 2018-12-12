@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'config/*'
+    - 'db/**/*'
+    - 'db/*'
+    - 'lib/*'
+    - 'log/*'
+    - 'public/*'
+    - 'test/*'
